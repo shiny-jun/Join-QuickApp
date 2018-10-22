@@ -1,0 +1,122 @@
+<import name="activity" src="../component/activity"></import>
+
+<template>
+    <div class="home-page">
+        <div class="search">
+            <div class="searchBg">
+                <input placeholder='请输需搜索活动' value='{{search}}' />
+            </div>
+        </div>
+        <div class="swiper">
+            <swiper autoplay="true" interval="3000" indicator="true">
+                <block for="swiper in swipers">
+                    <image src="{{swiper.image}}"></image>
+                </block>
+            </swiper>
+        </div>
+        <div class='type'>
+            <div class='type_item' for="type in types">
+                <div class='icon'>
+                    <image src="{{type.icon}}" style='width:80px;'></image>
+                </div>
+                <text class='type_name'>{{type.name}}</text>
+            </div>
+        </div>
+        <block for="activity in activity_list">
+            <activity activity="{{activity}}"></activity>
+        </block>
+    </div>
+</template>
+<style>
+    .home-page {
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    
+    .swiper {
+        text-align: center;
+        width: 100%;
+        height: 360px;
+    }
+    
+    .search {
+        background-color: #99ccb6;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .searchBg {
+        background-color: #f2f2f2;
+        width: 100%;
+        border-radius: 10px;
+        height: 60px;
+        align-items: center;
+    }
+    
+    input {
+        text-align: left;
+    }
+    
+    .type {
+        padding: 10px 0;
+    }
+    
+    .type_item {
+        width: 30%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .type_item .icon {
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    .type_item .type_name {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+</style>
+<script>
+    export default {
+        private: {
+            swipers: [{
+                image: 'https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPkbzAeJBuAInDH.jpeg',
+            }, {
+                image: 'https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPketIjDwDFodqy.png',
+            }, {
+                image: 'https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPkbbvdWHCKDppO.jpeg'
+            }],
+            search: 'hello',
+            types: [{
+                icon: '../Common/match.png',
+                name: '竞赛'
+            }, {
+                icon: '../Common/art.png',
+                name: '艺术'
+            }, {
+                icon: '../Common/physical.png',
+                name: '体育'
+            }],
+            activity_list: [{
+                image: 'https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPkbzAeJBuAInDH.jpeg',
+                title: '第一届超级大胃王',
+                startdate: '9.9',
+                enddate: '9.15',
+                tel: 1800000000
+            }, {
+                image: 'https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPkbzAeJBuAInDH.jpeg',
+                title: '第一届超级大胃王',
+                startdate: '9.9',
+                enddate: '9.15',
+                tel: 1800000000
+            }]
+        },
+        /**
+         * 当用户点击菜单按钮时触发，调用app中定义的方法showMenu
+         * 注意：使用加载器测试`创建桌面快捷方式`功能时，请先在`系统设置`中打开`应用加载器`的`桌面快捷方式`权限
+         */
+        onMenuPress() {}
+    }
+</script>

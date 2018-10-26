@@ -106,7 +106,7 @@ exports.default = {
   showMenu: _util2.default.showMenu,
   createShortcut: _util2.default.createShortcut
 };
-(exports.default || module.exports).manifest = {"package":"com.application.demo","name":"Join","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/logo.jpg","features":[{"name":"system.prompt"},{"name":"system.router"},{"name":"system.shortcut"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"off"},"router":{"entry":"Home","pages":{"Home":{"component":"index"},"DemoDetail":{"component":"index"},"About":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#99ccb6","titleBarTextColor":"#ffffff","menu":true,"pages":{"Home":{"titleBarText":"课外活动","menu":false},"DemoDetail":{"titleBarText":"详情页"},"About":{"menu":false}}}};
+(exports.default || module.exports).manifest = {"package":"com.application.demo","name":"Join","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/logo.jpg","features":[{"name":"system.prompt"},{"name":"system.router"},{"name":"system.shortcut"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug","data":{"currentTab":1}},"router":{"entry":"Home","pages":{"Home":{"component":"index"},"list":{"component":"index","path":"/list","filter":{"view":{"uri":"list"}}}}},"display":{"titleBarBackgroundColor":"#99ccb6","titleBarTextColor":"#ffffff","menu":true,"pages":{"Home":{"titleBarText":"课外活动","menu":true},"list":{"titleBarText":"搜索列表","menu":false}}}};
 }
 
 /***/ }),
@@ -201,7 +201,7 @@ exports.default = {
   else {
     window.createAppHandler = createAppHandler
     // H5注入manifest以获取features
-    global.manifest = {"package":"com.application.demo","name":"Join","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/logo.jpg","features":[{"name":"system.prompt"},{"name":"system.router"},{"name":"system.shortcut"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"off"},"router":{"entry":"Home","pages":{"Home":{"component":"index"},"DemoDetail":{"component":"index"},"About":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#99ccb6","titleBarTextColor":"#ffffff","menu":true,"pages":{"Home":{"titleBarText":"课外活动","menu":false},"DemoDetail":{"titleBarText":"详情页"},"About":{"menu":false}}}};
+    global.manifest = {"package":"com.application.demo","name":"Join","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/logo.jpg","features":[{"name":"system.prompt"},{"name":"system.router"},{"name":"system.shortcut"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug","data":{"currentTab":1}},"router":{"entry":"Home","pages":{"Home":{"component":"index"},"list":{"component":"index","path":"/list","filter":{"view":{"uri":"list"}}}}},"display":{"titleBarBackgroundColor":"#99ccb6","titleBarTextColor":"#ffffff","menu":true,"pages":{"Home":{"titleBarText":"课外活动","menu":true},"list":{"titleBarText":"搜索列表","menu":false}}}};
   }
 })();
 //# sourceMappingURL=app.js.map

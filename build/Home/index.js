@@ -63,28 +63,166 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $app_template$ = __webpack_require__(1)
+var $app_style$ = __webpack_require__(2)
+var $app_script$ = __webpack_require__(3)
+
+$app_define$('@app-component/search', [], function($app_require$, $app_exports$, $app_module$){
+     $app_script$($app_module$, $app_exports$, $app_require$)
+     if ($app_exports$.__esModule && $app_exports$.default) {
+            $app_module$.exports = $app_exports$.default
+        }
+     $app_module$.exports.template = $app_template$
+     $app_module$.exports.style = $app_style$
+})
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "type": "div",
+  "attr": {},
+  "classList": [
+    "search"
+  ],
+  "children": [
+    {
+      "type": "div",
+      "attr": {},
+      "classList": [
+        "searchBg"
+      ],
+      "children": [
+        {
+          "type": "input",
+          "attr": {
+            "placeholder": "请输需搜索活动",
+            "value": function () {return this.search}
+          }
+        },
+        {
+          "type": "text",
+          "attr": {
+            "value": "×"
+          },
+          "classList": [
+            "clean"
+          ],
+          "shown": function () {return this.clean}
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "attr": {
+        "value": "取消"
+      },
+      "classList": [
+        "btn"
+      ],
+      "shown": function () {return this.cancel},
+      "events": {
+        "click": "backHome"
+      }
+    }
+  ]
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  ".search": {
+    "display": "flex",
+    "flexDirection": "row",
+    "paddingTop": "10px",
+    "paddingRight": "10px",
+    "paddingBottom": "10px",
+    "paddingLeft": "10px",
+    "backgroundColor": "#99ccb6"
+  },
+  ".searchBg": {
+    "backgroundColor": "#f2f2f2",
+    "width": "100%",
+    "borderRadius": "10px",
+    "height": "60px"
+  },
+  ".search input": {
+    "marginLeft": "20px",
+    "height": "60px",
+    "lineHeight": "60px",
+    "textAlign": "left",
+    "_meta": {
+      "ruleDef": [
+        {
+          "t": "a",
+          "n": "class",
+          "i": false,
+          "a": "element",
+          "v": "search"
+        },
+        {
+          "t": "d"
+        },
+        {
+          "t": "t",
+          "n": "input"
+        }
+      ]
+    }
+  },
+  ".clear": {
+    "color": "#707070",
+    "zIndex": 9999,
+    "height": "60px",
+    "width": "50px"
+  },
+  ".holder": {
+    "fontSize": "26px"
+  },
+  ".btn": {
+    "color": "#ffffff",
+    "fontSize": "26px",
+    "lineHeight": "60px",
+    "marginLeft": "20px"
+  }
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = function(module, exports, $app_require$){'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: ['disable']
+};}
+
+/***/ }),
 /* 4 */,
 /* 5 */,
 /* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(12)
-var $app_template$ = __webpack_require__(16)
-var $app_style$ = __webpack_require__(17)
-var $app_script$ = __webpack_require__(18)
+__webpack_require__(8)
+__webpack_require__(0)
+var $app_template$ = __webpack_require__(12)
+var $app_style$ = __webpack_require__(13)
+var $app_script$ = __webpack_require__(14)
 
 $app_define$('@app-component/index', [], function($app_require$, $app_exports$, $app_module$){
      $app_script$($app_module$, $app_exports$, $app_require$)
@@ -99,12 +237,12 @@ $app_bootstrap$('@app-component/index',{ packagerVersion: '0.0.5'})
 
 
 /***/ }),
-/* 12 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $app_template$ = __webpack_require__(13)
-var $app_style$ = __webpack_require__(14)
-var $app_script$ = __webpack_require__(15)
+var $app_template$ = __webpack_require__(9)
+var $app_style$ = __webpack_require__(10)
+var $app_script$ = __webpack_require__(11)
 
 $app_define$('@app-component/activity', [], function($app_require$, $app_exports$, $app_module$){
      $app_script$($app_module$, $app_exports$, $app_require$)
@@ -117,7 +255,7 @@ $app_define$('@app-component/activity', [], function($app_require$, $app_exports
 
 
 /***/ }),
-/* 13 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -221,7 +359,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 14 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -232,14 +370,12 @@ module.exports = {
     "paddingRight": "0px",
     "paddingBottom": "20px",
     "paddingLeft": "0px",
-    "height": "280px",
-    "borderBottom": "1px solid #e6e6e6"
+    "height": "280px"
   },
   ".poster": {
     "flex": 1,
     "paddingLeft": "20px",
-    "height": "180px",
-    "overflow": "hidden"
+    "height": "180px"
   },
   ".data": {
     "flex": 3,
@@ -319,7 +455,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 15 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = function(module, exports, $app_require$){'use strict';
@@ -350,7 +486,7 @@ exports.default = {
 };}
 
 /***/ }),
-/* 16 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -361,29 +497,13 @@ module.exports = {
   ],
   "children": [
     {
-      "type": "div",
-      "attr": {},
-      "classList": [
-        "search"
-      ],
-      "children": [
-        {
-          "type": "div",
-          "attr": {},
-          "classList": [
-            "searchBg"
-          ],
-          "children": [
-            {
-              "type": "input",
-              "attr": {
-                "placeholder": "请输需搜索活动",
-                "value": function () {return this.search}
-              }
-            }
-          ]
-        }
-      ]
+      "type": "search",
+      "attr": {
+        "disabled": "ture"
+      },
+      "events": {
+        "click": "goList"
+      }
     },
     {
       "type": "div",
@@ -437,6 +557,9 @@ module.exports = {
             "exp": function () {return this.types},
             "value": "type"
           },
+          "events": {
+            "click": function (evt) {this.selectNav(this.index,evt)}
+          },
           "children": [
             {
               "type": "div",
@@ -489,7 +612,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 17 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -501,24 +624,6 @@ module.exports = {
     "textAlign": "center",
     "width": "100%",
     "height": "360px"
-  },
-  ".search": {
-    "backgroundColor": "#99ccb6",
-    "width": "100%",
-    "paddingTop": "10px",
-    "paddingRight": "10px",
-    "paddingBottom": "10px",
-    "paddingLeft": "10px"
-  },
-  ".searchBg": {
-    "backgroundColor": "#f2f2f2",
-    "width": "100%",
-    "borderRadius": "10px",
-    "height": "60px",
-    "alignItems": "center"
-  },
-  "input": {
-    "textAlign": "left"
   },
   ".type": {
     "paddingTop": "10px",
@@ -587,7 +692,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 18 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = function(module, exports, $app_require$){'use strict';
@@ -597,6 +702,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _system = $app_require$('@app-module/system.router');
+
+var _system2 = _interopRequireDefault(_system);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     private: {
@@ -632,7 +743,18 @@ exports.default = {
             tel: 1800000000
         }]
     },
-    onMenuPress: function onMenuPress() {}
+    onMenuPress: function onMenuPress() {},
+    goList: function goList() {
+        _system2.default.push({
+            uri: '/list'
+        });
+    },
+    selectNav: function selectNav(index) {
+        this.$app.$data.currentTab = 1;
+        _system2.default.push({
+            uri: '/list'
+        });
+    }
 };
 
 

@@ -14,7 +14,11 @@
         { "origin": "*" }
     ],
     "config": {
-        "logLevel": "off"
+        "logLevel": "debug",
+        "data":{
+            "currentTab": 1
+        }
+        
     },
     "router": {
         "entry": "Home",
@@ -22,11 +26,14 @@
             "Home": {
                 "component": "index"
             },
-            "DemoDetail": {
-                "component": "index"
-            },
-            "About": {
-                "component": "index"
+            "list":{
+                "component":"index",
+                "path":"/list",
+                "filter": {
+                    "view": {
+                      "uri": "list"
+                    }
+                  }
             }
         }
     },
@@ -37,12 +44,10 @@
         "pages": {
             "Home": {
                 "titleBarText": "课外活动",
-                "menu": false
+                "menu": true
             },
-            "DemoDetail": {
-                "titleBarText": "详情页"
-            },
-            "About": {
+            "list":{
+                "titleBarText": "搜索列表",
                 "menu": false
             }
         }

@@ -1,0 +1,61 @@
+<template>
+    <div class="search">
+        <div class="searchBg">
+            <input placeholder='请输需搜索活动' value='{{search}}' />
+            <text class="clean" if='{{clean}}'>×</text>
+        </div>
+        <text class="btn" if="{{cancel}}" onclick="backHome">取消</text>
+    </div>
+</template>
+
+<style>
+    .search {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        background-color: #99ccb6;
+    }
+
+    .searchBg {
+        /* position: relative; */
+        background-color: #f2f2f2;
+        width: 100%;
+        border-radius: 10px;
+        height: 60px;
+    }
+
+    .search input {
+        margin-left: 20px;
+        height: 60px;
+        line-height: 60px;
+        text-align: left;
+    }
+
+    .clear {
+        /* position: absolute;
+        top: 0px;
+        right: 0px; */
+        color: #707070;
+        z-index: 9999;
+        height: 60px;
+        width: 50px;
+    }
+
+    .holder {
+        font-size: 26px;
+    }
+
+    .btn {
+        color: #ffffff;
+        font-size: 26px;
+        line-height: 60px;
+        margin-left: 20px;
+    }
+</style>
+<script>
+    export default {
+        props: [
+            'disable'
+        ],
+    }
+</script>

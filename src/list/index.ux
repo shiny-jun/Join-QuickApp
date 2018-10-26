@@ -1,65 +1,14 @@
-<import name="activity" src="../component/activity"></import>
 <import name="search" src="../component/search"></import>
 
 <template>
-    <div class="home-page">
-        <search onclick="goList" disabled="ture"></search>
-        <div class="swiper">
-            <swiper autoplay="true" interval="3000" indicator="true">
-                <block for="swiper in swipers">
-                    <image src="{{swiper.image}}"></image>
-                </block>
-            </swiper>
-        </div>
-        <div class='type'>
-            <div class='type_item' for="type in types" onclick="selectNav(index)">
-                <div class='icon'>
-                    <image src="{{type.icon}}" style='width:80px;'></image>
-                </div>
-                <text class='type_name'>{{type.name}}</text>
-            </div>
-        </div>
-        <block for="activity in activity_list">
-            <activity activity="{{activity}}"></activity>
-        </block>
+    <div class="list">
+        <search></search>
+        <div><text>{{currentTab}}</text></div>
     </div>
 </template>
-<style>
-    .home-page {
-        flex-direction: column;
-        /* justify-content: center; */
-        align-items: center;
-    }
-
-    .swiper {
-        text-align: center;
-        width: 100%;
-        height: 360px;
-    }
-
-    .type {
-        padding: 10px 0;
-    }
-
-    .type_item {
-        width: 30%;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .type_item .icon {
-        justify-content: center;
-        padding: 10px 0;
-    }
-
-    .type_item .type_name {
-        text-align: center;
-        padding-bottom: 10px;
-    }
-</style>
+<style></style>
 <script>
-    import router from '@system.router'
-    export default {
+ export default {
         private: {
             swipers: [{
                 image: 'https://cloud-minapp-15787.cloud.ifanrusercontent.com/1fPkbzAeJBuAInDH.jpeg',
@@ -91,7 +40,8 @@
                 startdate: '9.9',
                 enddate: '9.15',
                 tel: 1800000000
-            }]
+            }],
+            currentTab:this.$app.$data.currentTab
         },
         /**
          * 当用户点击菜单按钮时触发，调用app中定义的方法showMenu
@@ -99,16 +49,13 @@
          */
         onMenuPress() {},
         // 函数
+        onInit () {
+      this.$page.setTitleBar({ text: '分类' })
+    },
         goList() {
             router.push({
                 uri: '/list'
             })
         },
-        selectNav(index){
-            this.$app.$data.currentTab = 1
-            router.push({
-                uri: '/list',
-            })
-        }
     }
 </script>
